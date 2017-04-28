@@ -1,6 +1,0 @@
-#ifndef DYNPDT_CONFIG_HPP
-#define DYNPDT_CONFIG_HPP
-
-/* #undef DYNPDT_USE_POPCNT */
-
-#endif // DYNPDT_CONFIG_HPP
