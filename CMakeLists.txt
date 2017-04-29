@@ -8,8 +8,8 @@ if (NOT CMAKE_BUILD_TYPE)
 endif ()
 
 configure_file(
-  ${DYNPDT_SOURCE_DIR}/config.hpp.in
-  ${DYNPDT_SOURCE_DIR}/include/config.hpp
+  ${DYNPDT_SOURCE_DIR}/dynpdt_config.hpp.in
+  ${DYNPDT_SOURCE_DIR}/include/dynpdt_config.hpp
 )
 
 option(DYNPDT_USE_POPCNT

@@ -4,7 +4,7 @@
 #include <popcntintrin.h>
 
 #include "basics.hpp"
-#include "config.hpp"
+#include "dynpdt_config.hpp"
 
 namespace dyn_pdt {
 
