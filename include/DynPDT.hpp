@@ -1,20 +1,16 @@
-//
-// Created by Kampersanda on 2017/02/21.
-//
+#ifndef DYNPDT_DYNPDT_HPP
+#define DYNPDT_DYNPDT_HPP
 
-#ifndef DYN_PDT_DYNPDT_HPP
-#define DYN_PDT_DYNPDT_HPP
-
-#include "BonsaiPR.hpp"
+#include "SimpleBonsai.hpp"
 #include "LabelPool_Plain.hpp"
 #include "LabelPool_BitMap.hpp"
 
-namespace dyn_pdt {
+namespace dynpdt {
 
 struct Setting {
   uint64_t num_keys = 0;
   double load_factor = 0.0;
-  uint64_t fixed_len = 0; // for node labels
+  uint64_t fixed_len = 0; // of node labels
   uint8_t width_1st = 0;
 
   void show_stat(std::ostream& os) const {
@@ -35,7 +31,7 @@ public:
 
   static constexpr uint8_t kAdjustAlphabet = 3; // heuristic
   static constexpr uint8_t kLabelMax = UINT8_MAX - kAdjustAlphabet;
-  static constexpr uint64_t kStepSymbol = UINT8_MAX; // <UINT8_MAX,0>
+  static constexpr uint64_t kStepSymbol = UINT8_MAX; // <UINT8_MAX, 0>
 
   static std::string name() {
     std::ostringstream oss;
@@ -49,10 +45,9 @@ public:
       exit(1);
     }
 
-    // -3 is to avoid exceeding
-    trie_ = std::make_unique<BonsaiPR>(setting_.num_keys / setting_.load_factor,
-                                       (setting_.fixed_len << 8) - kAdjustAlphabet,
-                                       setting_.width_1st);
+    trie_ = std::make_unique<SimpleBonsai>(setting_.num_keys / setting_.load_factor,
+                                           (setting_.fixed_len << 8) - kAdjustAlphabet,
+                                           setting_.width_1st);
     label_pool_ = std::make_unique<LabelPoolType>(trie_->num_slots());
     table_.fill(UINT8_MAX);
   }
@@ -77,7 +72,7 @@ public:
     return num_chars_;
   }
 
-  const BonsaiPR* get_trie() const {
+  const SimpleBonsai* get_trie() const {
     return trie_.get();
   }
 
@@ -100,11 +95,11 @@ private:
   uint64_t num_keys_ = 0;
   uint64_t num_steps_ = 0;
 
-  // code table to avoid overflow for -3
+  // code table to avoid overflow
   std::array<uint8_t, 256> table_;
   uint8_t num_chars_ = 0;
 
-  std::unique_ptr<BonsaiPR> trie_;
+  std::unique_ptr<SimpleBonsai> trie_;
   std::unique_ptr<LabelPoolType> label_pool_;
 
   const ValueType* find_(CharRange key) const {
@@ -202,6 +197,6 @@ private:
   }
 };
 
-}
+} // namespace - dynpdt
 
-#endif //DYN_PDT_DYNPDT_HPP
+#endif // DYNPDT_DYNPDT_HPP

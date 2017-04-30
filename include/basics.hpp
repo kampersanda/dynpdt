@@ -1,9 +1,5 @@
-//
-// Created by Kampersanda on 2017/02/21.
-//
-
-#ifndef DYN_PDT_BASICS_HPP
-#define DYN_PDT_BASICS_HPP
+#ifndef DYNPDT_BASICS_HPP
+#define DYNPDT_BASICS_HPP
 
 #include <array>
 #include <algorithm>
@@ -19,7 +15,7 @@
 #include <sstream>
 #include <cstring>
 
-namespace dyn_pdt {
+namespace dynpdt {
 
 using CharArray = std::unique_ptr<uint8_t[]>;
 
@@ -109,7 +105,6 @@ inline uint64_t estimate_map_memory(const std::map<T, V>& map) {
   return ret;
 };
 
-}
+} // namespace - dynpdt
 
-
-#endif //DYN_PDT_BASICS_HPP
+#endif // DYNPDT_BASICS_HPP

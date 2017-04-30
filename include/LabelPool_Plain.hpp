@@ -1,13 +1,9 @@
-//
-// Created by Kampersanda on 2017/02/21.
-//
-
-#ifndef DYN_PDT_PLAINPTRLABELPOOL_HPP
-#define DYN_PDT_PLAINPTRLABELPOOL_HPP
+#ifndef DYNPDT_LABEL_POOL_PLAIN_HPP
+#define DYNPDT_LABEL_POOL_PLAIN_HPP
 
 #include "basics.hpp"
 
-namespace dyn_pdt {
+namespace dynpdt {
 
 template <typename _ValueType>
 class LabelPool_Plain {
@@ -103,6 +99,6 @@ private:
   uint64_t sum_bytes_ = 0;
 };
 
-}
+} // namespace - dynpdt
 
-#endif //DYN_PDT_PLAINPTRLABELPOOL_HPP
+#endif // DYNPDT_LABEL_POOL_PLAIN_HPP

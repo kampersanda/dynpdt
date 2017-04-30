@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.8)
+cmake_minimum_required(VERSION 2.6)
 project(DYNPDT)
 
 set(CMAKE_CXX_FLAGS "-Wall -std=c++14")
@@ -24,12 +24,25 @@ endif ()
 
 message(STATUS "BUILD_TYPE is ${CMAKE_BUILD_TYPE}")
 message(STATUS "CXX_FLAGS are ${CMAKE_CXX_FLAGS}")
+message(STATUS "CXX_FLAGS_DEBUG are ${CMAKE_CXX_FLAGS_DEBUG}")
 message(STATUS "CXX_FLAGS_RELEASE are ${CMAKE_CXX_FLAGS_RELEASE}")
 message(STATUS "DYNPDT_USE_POPCNT is ${DYNPDT_USE_POPCNT}")
 
 include_directories(include)
 
-add_executable(bench bench.cpp)
+# For links in my personal IDE
+set(HEADERS
+  include/basics.hpp
+  include/bit_tools.hpp
+  include/DynPDT.hpp
+  include/FitVector.hpp
+  include/LabelPool_BitMap.hpp
+  include/LabelPool_Plain.hpp
+  include/SimpleBonsai.hpp
+  include/vbyte.hpp
+  )
+
+add_executable(bench bench.cpp ${HEADERS})
 
 enable_testing()
 file(GLOB TEST_SOURCES test_*.cpp)

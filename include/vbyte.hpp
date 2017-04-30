@@ -1,14 +1,9 @@
-//
-// Created by Kampersanda on 2017/04/07.
-//
-
-#ifndef DYN_PDT_VBYTE_HPP
-#define DYN_PDT_VBYTE_HPP
+#ifndef DYNPDT_VBYTE_HPP
+#define DYNPDT_VBYTE_HPP
 
 #include "basics.hpp"
 
-namespace dyn_pdt {
-
+namespace dynpdt {
 namespace vbyte {
 
 inline uint64_t size(uint64_t val) {
@@ -41,8 +36,7 @@ inline uint64_t decode(const uint8_t* codes, uint64_t& val) {
   return i;
 }
 
-}
+} // namespace - vbyte
+} // namespace - dynpdt
 
-}
-
-#endif //DYN_PDT_VBYTE_HPP
+#endif // DYNPDT_VBYTE_HPP

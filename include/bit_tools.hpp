@@ -1,13 +1,12 @@
-#ifndef DYN_PDT_BITMANAGER_HPP
-#define DYN_PDT_BITMANAGER_HPP
+#ifndef DYNPDT_BIT_TOOLS_HPP
+#define DYNPDT_BIT_TOOLS_HPP
 
 #include <popcntintrin.h>
 
 #include "basics.hpp"
 #include "dynpdt_config.hpp"
 
-namespace dyn_pdt {
-
+namespace dynpdt {
 namespace bit_tools {
 
 class PopcountTable16Builder {
@@ -127,8 +126,7 @@ inline uint64_t popcount(uint64_t x, uint64_t i) {
   return popcount(masked);
 }
 
-}
+} // namespace - bit_tools
+} // namespace - dynpdt
 
-}
-
-#endif //DYN_PDT_BITMANAGER_HPP
+#endif // DYNPDT_BIT_TOOLS_HPP

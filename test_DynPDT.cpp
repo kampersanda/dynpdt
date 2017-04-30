@@ -9,7 +9,7 @@
 
 #include <DynPDT.hpp>
 
-using namespace dyn_pdt;
+using namespace dynpdt;
 
 namespace {
 

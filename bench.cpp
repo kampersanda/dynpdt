@@ -5,7 +5,7 @@
 
 #include <DynPDT.hpp>
 
-using namespace dyn_pdt;
+using namespace dynpdt;
 
 namespace {
 
@@ -168,7 +168,7 @@ int bench(const char* argv[]) {
   return 0;
 }
 
-}
+} // namespace
 
 int main(int argc, const char* argv[]) {
   std::ostringstream usage;

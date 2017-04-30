@@ -10,7 +10,7 @@
 #include "include/LabelPool_BitMap.hpp"
 #include "include/LabelPool_Plain.hpp"
 
-using namespace dyn_pdt;
+using namespace dynpdt;
 
 namespace {
 

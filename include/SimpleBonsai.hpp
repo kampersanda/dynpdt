@@ -1,32 +1,28 @@
-//
-// Created by Kampersanda on 2017/02/21.
-//
-
-#ifndef DYN_PDT_BONSAI_HPP
-#define DYN_PDT_BONSAI_HPP
+#ifndef DYNPDT_SIMPLE_BONSAI_HPP
+#define DYNPDT_SIMPLE_BONSAI_HPP
 
 #include "basics.hpp"
 #include "FitVector.hpp"
 
-namespace dyn_pdt {
+namespace dynpdt {
 
 /*
- * Very simple implementation of m-Bonsai (recursive) described in
+ *  A simple modified version of m-Bonsai (recursive) described in
  *  - Poyias and Raman, Improved practical compact dynamic tries, SPIRE, 2015.
  * */
-class BonsaiPR {
+class SimpleBonsai {
 public:
   static std::string name() {
-    return "BonsaiPR";
+    return "SimpleBonsai";
   }
 
-  BonsaiPR(uint64_t num_slots, uint64_t alphabet_size, uint8_t width_1st) {
-    num_nodes_ = 1; // root
+  SimpleBonsai(uint64_t num_slots, uint64_t alphabet_size, uint8_t width_1st) {
+    num_nodes_ = 1; // for root
     num_slots_ = num_slots;
     alphabet_size_ = alphabet_size;
     width_1st_ = width_1st;
 
-    root_id_ = num_slots_ / 2;
+    root_id_ = num_slots_ / 2; // no reason why
 
     empty_mark_ = alphabet_size + 2; // the maximum quotient value expected + 1
     max_dsp1st_ = (1U << width_1st) - 1;
@@ -44,7 +40,7 @@ public:
                                          empty_mark_ << width_1st);
   }
 
-  ~BonsaiPR() {}
+  ~SimpleBonsai() {}
 
   uint64_t get_root() const {
     return root_id_;
@@ -142,8 +138,8 @@ public:
     os << " - average_dsp:\t" << average_dsp() << endl;
   }
 
-  BonsaiPR(const BonsaiPR&) = delete;
-  BonsaiPR& operator=(const BonsaiPR&) = delete;
+  SimpleBonsai(const SimpleBonsai&) = delete;
+  SimpleBonsai& operator=(const SimpleBonsai&) = delete;
 
 private:
   struct HashValue {
@@ -203,6 +199,6 @@ private:
   }
 };
 
-}
+} // namespace - dynpdt
 
-#endif //DYN_PDT_BONSAI_HPP
+#endif // DYNPDT_SIMPLE_BONSAI_HPP

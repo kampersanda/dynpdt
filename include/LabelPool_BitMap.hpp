@@ -1,15 +1,11 @@
-//
-// Created by Kampersanda on 2017/04/02.
-//
-
-#ifndef DYN_PDT_LABELPOOL_BITMAP_HPP
-#define DYN_PDT_LABELPOOL_BITMAP_HPP
+#ifndef DYNPDT_LABEL_POOL_BITMAP_HPP
+#define DYNPDT_LABEL_POOL_BITMAP_HPP
 
 #include "basics.hpp"
 #include "bit_tools.hpp"
 #include "vbyte.hpp"
 
-namespace dyn_pdt {
+namespace dynpdt {
 
 /*
  * Compact label management in a manner similar to sparsetable at
@@ -17,6 +13,7 @@ namespace dyn_pdt {
  *
  * Accessing a label is supported in O(kGroupSize) time using the skipping approach described in
  *  - Askitis and Zobel, Cache-conscious collision resolution in string hash tables, SPIRE, 2005.
+ *
  * */
 template<typename _ValueType, int GroupTypeId>
 class LabelPool_BitMap {
@@ -215,6 +212,6 @@ private:
   };
 };
 
-}
+} // namespace - dynpdt
 
-#endif //DYN_PDT_LABELPOOL_BITMAP_HPP
+#endif // DYNPDT_LABEL_POOL_BITMAP_HPP

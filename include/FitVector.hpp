@@ -1,13 +1,9 @@
-//
-// Created by Kampersanda on 2017/03/29.
-//
-
-#ifndef DYN_PDT_FITVECTOR_HPP
-#define DYN_PDT_FITVECTOR_HPP
+#ifndef DYNPDT_FIT_VECTOR_HPP
+#define DYNPDT_FIT_VECTOR_HPP
 
 #include "basics.hpp"
 
-namespace dyn_pdt {
+namespace dynpdt {
 
 class FitVector {
 public:
@@ -83,6 +79,6 @@ private:
   uint64_t mask_ = 0;
 };
 
-}
+} // namespace - dynpdt
 
-#endif //DYN_PDT_FITVECTOR_HPP
+#endif // DYNPDT_FIT_VECTOR_HPP
