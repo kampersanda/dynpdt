@@ -30,7 +30,6 @@ message(STATUS "DYNPDT_USE_POPCNT is ${DYNPDT_USE_POPCNT}")
 
 include_directories(include)
 
-# For links in my personal IDE
 set(HEADERS
   include/basics.hpp
   include/bit_tools.hpp
