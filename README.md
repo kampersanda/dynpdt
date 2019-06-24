@@ -2,16 +2,20 @@
 
 This experimental library implements a space-efficient dynamic keyword dictionary, namely DynPDT, described in
 
-- S. Kanda, K. Morita, and M. Fuketa. Practical implementation of space-efficient dynamic keyword dictionaries. In _Proc. SPIRE_, 2017. (accepted) [[pdf](https://sites.google.com/site/shnskknd/SPIRE2017.pdf)]
+- S. Kanda, K. Morita, and M. Fuketa. Practical implementation of space-efficient dynamic keyword dictionaries. In _Proc. SPIRE_, 2017. (accepted) [[pdf](https://drive.google.com/open?id=1SoCfb4IV51aS5wgQBVuEkIx9L-fK6_ke)]
 
 You can tentatively build and run the source code using two shell scripts and a sample dataset.
+
+## Notice
+
+[`poplar-trie`](https://github.com/kampersanda/poplar-trie) is an enhanced version of this library.
 
 ## Build instructions
 
 You can download and compile Dynpdt as the following commands:
 
 ```
-$ git clone https://github.com/kamp78/dynpdt.git
+$ git clone git@github.com:kampersanda/dynpdt.git
 $ cd dynpdt
 $ mkdir build
 $ cd build
